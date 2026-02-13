@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff4e8b, #ff9a9e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    color: white;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    animation: fadeIn 3s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+button {
+    width: 80%;
+    max-width: 250px;
+    padding: 14px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff4e8b;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffe0ea;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: red;
+    transform: rotate(45deg);
+    animation: float 8s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -9px;
+    left: 0;
+}
+
+.heart::after {
+    left: -9px;
+    top: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* 📱 Extra Small Phones */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    button {
+        width: 90%;
+    }
+}
